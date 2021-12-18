@@ -66,8 +66,8 @@ public class User {
     }
 
     public void registerEventPublish(ApplicationEventPublisher eventPublisher) {
-        adminEventPublish(eventPublisher);
         couponEventPublish(eventPublisher);
+        adminEventPublish(eventPublisher);
         senderEventPublish(eventPublisher);
     }
     private void adminEventPublish(ApplicationEventPublisher eventPublisher) {
