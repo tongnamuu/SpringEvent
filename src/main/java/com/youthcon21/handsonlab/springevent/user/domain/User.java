@@ -1,6 +1,7 @@
 package com.youthcon21.handsonlab.springevent.user.domain;
 
 import com.youthcon21.handsonlab.springevent.user.event.UserAdminEvent;
+import com.youthcon21.handsonlab.springevent.user.event.UserCouponEvent;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.context.ApplicationEventPublisher;
@@ -63,8 +64,16 @@ public class User {
         return phoneNumber;
     }
 
-    public void adminEventPublish(ApplicationEventPublisher eventPublisher) {
+    public void registerEventPublish(ApplicationEventPublisher eventPublisher) {
+        adminEventPublish(eventPublisher);
+        couponEventPublish(eventPublisher);
+    }
+    private void adminEventPublish(ApplicationEventPublisher eventPublisher) {
         eventPublisher.publishEvent(new UserAdminEvent(this, this.name));
+    }
+
+    private void couponEventPublish(ApplicationEventPublisher eventPublisher) {
+        eventPublisher.publishEvent(new UserCouponEvent(this, this.email));
     }
 }
 
