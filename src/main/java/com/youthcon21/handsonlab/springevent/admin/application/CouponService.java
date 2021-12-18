@@ -1,11 +1,12 @@
 package com.youthcon21.handsonlab.springevent.admin.application;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
 public class CouponService {
+    private final static Logger log = LoggerFactory.getLogger(AdminService.class);
     public void register(String email) {
         log.info("쿠폰 등록 완료 : {}", email);
     }
