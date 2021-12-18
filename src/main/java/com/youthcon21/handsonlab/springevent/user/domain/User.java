@@ -1,7 +1,9 @@
 package com.youthcon21.handsonlab.springevent.user.domain;
 
+import com.youthcon21.handsonlab.springevent.user.event.UserAdminEvent;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.context.ApplicationEventPublisher;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -59,6 +61,10 @@ public class User {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public void adminEventPublish(ApplicationEventPublisher eventPublisher) {
+        eventPublisher.publishEvent(new UserAdminEvent(this, this.name));
     }
 }
 
