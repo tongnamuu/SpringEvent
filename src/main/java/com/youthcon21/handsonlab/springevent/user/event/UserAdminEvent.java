@@ -2,11 +2,10 @@ package com.youthcon21.handsonlab.springevent.user.event;
 
 import org.springframework.context.ApplicationEvent;
 
-public class UserAdminEvent extends ApplicationEvent {
+public class UserAdminEvent {
     private final String username;
 
-    public UserAdminEvent(Object source, String username) {
-        super(source);
+    public UserAdminEvent(String username) {
         this.username = username;
     }
 

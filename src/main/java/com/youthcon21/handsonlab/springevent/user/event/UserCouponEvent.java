@@ -2,11 +2,10 @@ package com.youthcon21.handsonlab.springevent.user.event;
 
 import org.springframework.context.ApplicationEvent;
 
-public class UserCouponEvent extends ApplicationEvent {
+public class UserCouponEvent {
     private final String email;
 
-    public UserCouponEvent(Object source, String email) {
-        super(source);
+    public UserCouponEvent(String email) {
         this.email = email;
     }
 

@@ -2,12 +2,11 @@ package com.youthcon21.handsonlab.springevent.user.event;
 
 import org.springframework.context.ApplicationEvent;
 
-public class UserSenderEvent extends ApplicationEvent {
+public class UserSenderEvent{
     private final String email;
     private final String phoneNumber;
 
-    public UserSenderEvent(Object source, String email, String phoneNumber) {
-        super(source);
+    public UserSenderEvent(String email, String phoneNumber) {
         this.email = email;
         this.phoneNumber = phoneNumber;
     }

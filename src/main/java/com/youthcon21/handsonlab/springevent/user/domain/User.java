@@ -71,15 +71,15 @@ public class User {
         senderEventPublish(eventPublisher);
     }
     private void adminEventPublish(ApplicationEventPublisher eventPublisher) {
-        eventPublisher.publishEvent(new UserAdminEvent(this, this.name));
+        eventPublisher.publishEvent(new UserAdminEvent(this.name));
     }
 
     private void couponEventPublish(ApplicationEventPublisher eventPublisher) {
-        eventPublisher.publishEvent(new UserCouponEvent(this, this.email));
+        eventPublisher.publishEvent(new UserCouponEvent(this.email));
     }
 
     private void senderEventPublish(ApplicationEventPublisher eventPublisher) {
-        eventPublisher.publishEvent(new UserSenderEvent(this, this.email, this.phoneNumber));
+        eventPublisher.publishEvent(new UserSenderEvent(this.email, this.phoneNumber));
     }
 }
 
