@@ -15,8 +15,7 @@ public class SenderEventListener {
     @EventListener
     @Async
     public void handleEmail(UserSenderEvent event) {
-        throw new RuntimeException();
-        // log.info("환영 이메일 발송 성공 : {}", event.getEmail());
+        log.info("환영 이메일 발송 성공 : {}", event.getEmail());
     }
 
     @EventListener
