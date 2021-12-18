@@ -13,7 +13,6 @@ public class AdminServiceEventListener {
 
     @EventListener
     public void onApplicationEvent(UserAdminEvent event) {
-        throw new RuntimeException();
-        // log.info("어드민 서비스 : {}님이 가입했습니다", event.getUsername());
+        log.info("어드민 서비스 : {}님이 가입했습니다", event.getUsername());
     }
 }
