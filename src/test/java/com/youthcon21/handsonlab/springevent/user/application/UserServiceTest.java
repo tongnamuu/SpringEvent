@@ -34,7 +34,7 @@ class UserServiceTest {
     private ApplicationEventPublisher eventPublisher;
 
     @Captor
-    private ArgumentCaptor<ApplicationEvent> eventPublisherCaptor;
+    private ArgumentCaptor<Object> eventPublisherCaptor;
 
     private UserService userService;
 
@@ -54,7 +54,7 @@ class UserServiceTest {
 
         verify(eventPublisher, times(3)).publishEvent(eventPublisherCaptor.capture());
 
-        List<ApplicationEvent> allValues = eventPublisherCaptor.getAllValues();
+        List<Object> allValues = eventPublisherCaptor.getAllValues();
 
         assertThat(allValues.get(0)).isInstanceOf(UserAdminEvent.class);
         assertThat(allValues.get(1)).isInstanceOf(UserCouponEvent.class);
