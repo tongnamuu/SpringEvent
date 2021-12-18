@@ -8,6 +8,7 @@ Java 11을 사용합니다.
 
 이후 annotation processing 옵션을 켜주세요
 ![img_1.png](images/img_1.png)
+
 이후 프로젝트 repository의 커밋을 따라오시면 그대로 실습하실 수 있습니다.
 
 # 우리가 실습해볼 것 #
